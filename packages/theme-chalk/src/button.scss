@@ -1,0 +1,69 @@
+@import './common/var.scss';
+
+.lh-button{
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: $--color-white;
+  border: $--border-base;
+  color: $--color-text-regular;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  font-weight: $--button-font-weight;
+  padding: $--button-padding-default;
+  font-size: $--font-size-base;
+  border-radius: $--border-radius-base;
+  @each $type, $color in (primary: $--color-primary, success: $--color-success, warning: $--color-warning, info: $--color-info, danger: $--color-danger) {
+    &--#{$type} {
+      background-color: $color;
+      color: #fff;
+      border-color: $color;
+    }
+  }
+
+  @each $type, $color in (primary: $--color-primary-hover, success: $--color-success-hover, warning: $--color-warning-hover, info: $--color-info-hover, danger: $--color-danger-hover) {
+    &--#{$type}:hover {
+      background-color: $color;
+      color: #fff;
+      border-color: $color;
+    }
+  }
+
+  @each $type, $color in (primary: $--color-primary-hover, success: $--color-success-hover, warning: $--color-warning-hover, info: $--color-info-hover, danger: $--color-danger-hover) {
+    &--#{$type}:focus {
+      background-color: $color;
+      color: #fff;
+      border-color: $color;
+    }
+  }
+
+  @each $type, $color in (primary: $--color-primary-active, success: $--color-success-active, warning: $--color-warning-active, info: $--color-info-active, danger: $--color-danger-active) {
+    &--#{$type}:active {
+      background-color: $color;
+      color: #fff;
+      border-color: $color;
+    }
+  }
+
+  &--middle{
+    padding: $--button-padding-middle;
+    font-size: $--button-medium-font-size;
+    border-radius: $--button-medium-border-radius;
+  }
+  &--small{
+    padding: $--button-padding-small;
+    font-size: $--button-small-font-size;
+    border-radius: $--button-small-border-radius;
+  }
+  &--mini{
+    padding: $--button-padding-mini;
+    font-size: $--button-mini-font-size;
+    border-radius: $--button-mini-border-radius;
+  }
+
+  &.is-round {
+    border-radius: 20px;
+  }
+}

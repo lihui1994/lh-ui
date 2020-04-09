@@ -1,4 +1,11 @@
 
+// 基础样式
+// 基础颜色
+
+$--color-primary: #409EFF !default;
+/// color|1|Background Color|4
+$--color-white: #FFFFFF !default;
+
 $--color-success: #67C23A !default;
 $--color-warning: #E6A23C !default;
 $--color-danger: #F56C6C !default;
@@ -15,6 +22,17 @@ $--color-success-active: #5daf34 !default;
 $--color-warning-active: #cf9236 !default;
 $--color-danger-active: #dd6161 !default;
 $--color-info-active: #82848a !default;
+
+
+$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
+$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
+$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
+$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
+
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
+$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
+$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 
 /* Color
 -------------------------- */
@@ -104,3 +122,22 @@ $--button-padding-small: 9px 15px;
 $--button-mini-font-size: 12px !default;
 $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
 $--button-padding-mini: 7px 15px;
+
+// alert
+$--alert-padding: 8px 16px !default;
+/// borderRadius||Border|2
+$--alert-border-radius: $--border-radius-base !default;
+/// fontSize||Font|1
+$--alert-title-font-size: 13px !default;
+/// fontSize||Font|1
+$--alert-description-font-size: 12px !default;
+/// fontSize||Font|1
+$--alert-close-font-size: 12px !default;
+/// fontSize||Font|1
+$--alert-close-customed-font-size: 13px !default;
+
+$--alert-success-color: $--color-success-lighter !default;
+$--alert-info-color: $--color-info-lighter !default;
+$--alert-warning-color: $--color-warning-lighter !default;
+$--alert-danger-color: $--color-danger-lighter !default;
+

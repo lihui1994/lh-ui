@@ -1,0 +1,54 @@
+@import 'common/var.scss';
+
+.lh-alert{
+  width: 100%;
+  padding: $--alert-padding;
+  box-sizing: border-box;
+  border-radius: $--alert-border-radius;
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  transition: opacity .2s;
+  
+  &__content{
+    display: table-cell;
+    padding: 0 8px;
+  }
+
+  &__title{
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  &__closebtn {
+    font-size: 12px;
+    opacity: 1;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+  }
+
+  @each $type, $color, $textColor in(success, $--alert-success-color, $--color-success), (info, $--alert-info-color, $--color-info), (warning, $--alert-warning-color, $--color-warning), (danger, $--alert-danger-color, $--color-danger) {
+    &--#{$type}.is-light{
+      background-color: $color;
+      color: $textColor;
+    }
+    &--#{$type}.is-dark{
+      background-color: $textColor;
+      color: $--color-white;
+    }
+  }
+}
+
+.is-center{
+  justify-content: center;
+}
+
+.lh-alert-fade-enter,
+.lh-alert-fade-leave-active{
+  opacity: 0;
+}
+

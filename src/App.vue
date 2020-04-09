@@ -2,6 +2,7 @@
   <div id="app">
     <test-button></test-button>
     <test-icon></test-icon>
+    <test-alert></test-alert>
   </div>
 </template>
 
@@ -9,10 +10,11 @@
 
   import testButton from './test/button.vue';
   import testIcon from './test/icon.vue';
+  import testAlert from './test/alert.vue';
 
   export default {
     name: 'App',
-    components: {testButton, testIcon}
+    components: {testButton, testIcon, testAlert}
   }
 </script>
 

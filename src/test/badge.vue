@@ -30,11 +30,6 @@
         <lh-button size="small">回复</lh-button>
       </lh-badge>
     </div>
-    <div class="col">
-      <lh-badge is-dot>
-        数据查询
-      </lh-badge>
-    </div>
   </div>
 </template>
 

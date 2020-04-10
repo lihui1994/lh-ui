@@ -141,3 +141,11 @@ $--alert-info-color: $--color-info-lighter !default;
 $--alert-warning-color: $--color-warning-lighter !default;
 $--alert-danger-color: $--color-danger-lighter !default;
 
+$--badge-background-color: $--color-danger !default;
+$--badge-radius: 10px !default;
+/// fontSize||Font|1
+$--badge-font-size: 12px !default;
+/// padding||Spacing|3
+$--badge-padding: 6px !default;
+/// height||Other|4
+$--badge-size: 18px !default;

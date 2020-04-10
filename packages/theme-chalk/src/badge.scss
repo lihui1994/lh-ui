@@ -1,0 +1,44 @@
+@import 'common/var.scss';
+
+.lh-badge {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+
+  &__content{
+    background-color: $--badge-background-color;
+    border-radius: $--badge-radius;
+    color: $--color-white;
+    display: inline-block;
+    font-size: $--badge-font-size;
+    height: $--badge-size;
+    line-height: $--badge-size;
+    padding: 0 $--badge-padding;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid $--color-white;
+
+    @each $type, $color in (primary: $--color-primary, success: $--color-success, warning: $--color-warning, info: $--color-info, danger: $--color-danger) {
+      &-#{$type} {
+        background-color: $color;
+      }
+    }
+  }
+
+
+}
+
+.is-fixed{
+  position: absolute;
+  top: 0;
+  right: #{ 1+ $--badge-size / 2 };
+  transform: translateY(-50%) translateX(100%);
+}
+
+.is-dot{
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  right: 0;
+  padding: 0;
+}

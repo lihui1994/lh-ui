@@ -4,6 +4,7 @@
     <!-- <test-icon></test-icon> -->
     <!-- <test-alert></test-alert> -->
     <test-badge></test-badge>
+    <test-link></test-link>
   </div>
 </template>
 
@@ -13,10 +14,11 @@
   import testIcon from './test/icon.vue';
   import testAlert from './test/alert.vue';
   import testBadge from './test/badge.vue';
+  import testLink from './test/link.vue';
 
   export default {
     name: 'App',
-    components: {testButton, testIcon, testAlert, testBadge}
+    components: {testButton, testIcon, testAlert, testBadge, testLink}
   }
 </script>
 

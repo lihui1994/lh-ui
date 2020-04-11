@@ -1,0 +1,64 @@
+@import 'common/var.scss';
+
+$typeMap: (
+  default: $--link-default-font-color,
+  primary: $--link-primary-font-color,
+  success: $--link-success-font-color,
+  warning: $--link-warning-font-color,
+  danger: $--link-danger-font-color,
+  info: $--link-info-font-color);
+
+.lh-link{
+  display: inline-block;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: $--link-font-size;
+  font-weight: $--link-font-weight;
+
+  @each $type, $color in $typeMap {
+    &--#{$type} {
+      color: $color;
+    }
+  }
+}
+
+
+.is-underline.lh-link {
+  @each $type, $color in $typeMap {
+    &--#{$type}:hover{
+      color: mix($color, $--color-white, 80%);
+    }
+    &--#{$type}:active{
+      color: mix($color, $--color-white, 80%);
+    }
+    &--#{$type}:hover{
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 0;
+        bottom: 0;
+        border-bottom: 1px solid $color;
+      }
+    }
+  }
+}
+
+.is-disable.lh-link {
+  @each $type, $color in $typeMap {
+    &--#{$type} {
+      cursor: not-allowed;
+      color: mix($color, $--color-white, 50%)
+    }
+  }
+}
+
+

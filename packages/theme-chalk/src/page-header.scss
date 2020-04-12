@@ -1,0 +1,40 @@
+@import "common/var";
+
+.lh-page-header{
+  display: flex;
+  line-height: 24px;
+
+  &__left{
+    display: flex;
+    cursor: pointer;
+    margin-right: 40px;
+    position: relative;
+
+    &::after{
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 16px;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $--border-color-base;
+    }
+  }
+
+  &__title{
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__content{
+    font-size: 18px;
+    color: $--color-text-primary;
+  }
+}
+
+.el-icon-back {
+  font-size: 18px;
+  margin-right: 6px;
+  align-self: center;
+}

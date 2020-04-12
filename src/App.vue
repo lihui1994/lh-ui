@@ -10,8 +10,9 @@
     <test-divider></test-divider>
     <test-link></test-link>
     <test-divider></test-divider>
-    <test-card></test-card>
-    <test-divider></test-divider>
+    <!-- <test-card></test-card>
+    <test-divider></test-divider> -->
+    <test-page-header></test-page-header>
   </div>
 </template>
 
@@ -24,6 +25,7 @@
   import testLink from './test/link.vue';
   import testCard from './test/card.vue';
   import testDivider from './test/divider.vue';
+  import testPageHeader from './test/pageHeader.vue';
 
   export default {
     name: 'App',
@@ -34,7 +36,8 @@
       testBadge,
       testLink,
       testCard,
-      testDivider
+      testDivider,
+      testPageHeader
     }
   }
 </script>

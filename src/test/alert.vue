@@ -12,7 +12,7 @@
     <div class="row">
       <lh-alert title="错误提示的文案" type="danger"></lh-alert>
     </div>
-    <div class='row'>
+    <!-- <div class='row'>
       <lh-alert title="成功提示的文案" type="success" effect="dark"></lh-alert>
     </div>
     <div class="row">
@@ -23,7 +23,7 @@
     </div>
     <div class="row">
       <lh-alert title="错误提示的文案" type="danger" effect="dark" center></lh-alert>
-    </div>
+    </div> -->
   </div>
 </template>
 

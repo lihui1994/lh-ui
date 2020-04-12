@@ -1,0 +1,30 @@
+@import './common/var.scss';
+
+.lh-card{
+  border-radius: $--card-border-radius;
+  border: 1px solid $--card-border-color;
+  background-color: $--color-white;;
+  overflow: hidden;
+  color: $--color-text-primary;
+  transition: .3s;
+
+  &__header{
+    padding: #{$--card-padding - 2 $--card-padding};
+    border-bottom: 1px solid $--card-border-color;
+    box-sizing: border-box;
+  }
+
+  &__body{
+    padding: $--card-padding;
+  }
+
+  &.is-always-shadow{
+    box-shadow: $--box-shadow-light;
+  }
+
+  @each $type in (hover, focus) {
+    &.is-#{$type}-shadow:#{$type} {
+      box-shadow: $--box-shadow-light;
+    }
+  }
+}

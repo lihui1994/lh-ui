@@ -150,6 +150,8 @@ $--badge-padding: 6px !default;
 /// height||Other|4
 $--badge-size: 18px !default;
 
+
+// link
 $--link-font-size: $--font-size-base !default;
 /// fontWeight||Font|1
 $--link-font-weight: $--font-weight-primary !default;
@@ -169,3 +171,17 @@ $--link-warning-font-color: $--color-warning !default;
 $--link-danger-font-color: $--color-danger !default;
 /// color||Color|0
 $--link-info-font-color: $--color-info !default;
+
+// card
+$--card-border-color: $--border-color-lighter !default;
+$--card-border-radius: 4px !default;
+/// padding||Spacing|3
+$--card-padding: 20px !default;
+
+// Box-shadow
+/// boxShadow|1|Shadow|1
+$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+// boxShadow|1|Shadow|1
+$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
+/// boxShadow|1|Shadow|1
+$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;

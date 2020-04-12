@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <test-button></test-button>
-    <!-- <test-icon></test-icon> -->
-    <!-- <test-alert></test-alert> -->
+    <test-icon></test-icon>
+    <test-alert></test-alert>
     <test-badge></test-badge>
     <test-link></test-link>
+    <test-card></test-card>
   </div>
 </template>
 
@@ -15,10 +16,11 @@
   import testAlert from './test/alert.vue';
   import testBadge from './test/badge.vue';
   import testLink from './test/link.vue';
+  import testCard from './test/card.vue';
 
   export default {
     name: 'App',
-    components: {testButton, testIcon, testAlert, testBadge, testLink}
+    components: {testButton, testIcon, testAlert, testBadge, testLink, testCard}
   }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="row">
     <lh-card class="box-card">
       <div slot="header" class="clearfix">
         <span>卡片名称</span>

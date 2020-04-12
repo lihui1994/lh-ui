@@ -1,11 +1,17 @@
 <template>
   <div id="app">
     <test-button></test-button>
+    <test-divider></test-divider>
     <test-icon></test-icon>
+    <test-divider></test-divider>
     <test-alert></test-alert>
+    <test-divider></test-divider>
     <test-badge></test-badge>
+    <test-divider></test-divider>
     <test-link></test-link>
+    <test-divider></test-divider>
     <test-card></test-card>
+    <test-divider></test-divider>
   </div>
 </template>
 
@@ -17,10 +23,19 @@
   import testBadge from './test/badge.vue';
   import testLink from './test/link.vue';
   import testCard from './test/card.vue';
+  import testDivider from './test/divider.vue';
 
   export default {
     name: 'App',
-    components: {testButton, testIcon, testAlert, testBadge, testLink, testCard}
+    components: {
+      testButton,
+      testIcon,
+      testAlert,
+      testBadge,
+      testLink,
+      testCard,
+      testDivider
+    }
   }
 </script>
 

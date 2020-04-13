@@ -13,6 +13,7 @@
     <!-- <test-card></test-card>
     <test-divider></test-divider> -->
     <test-page-header></test-page-header>
+    <test-dialog></test-dialog>
   </div>
 </template>
 
@@ -26,6 +27,7 @@
   import testCard from './test/card.vue';
   import testDivider from './test/divider.vue';
   import testPageHeader from './test/pageHeader.vue';
+  import testDialog from './test/dialog.vue';
 
   export default {
     name: 'App',
@@ -37,7 +39,8 @@
       testLink,
       testCard,
       testDivider,
-      testPageHeader
+      testPageHeader,
+      testDialog
     }
   }
 </script>

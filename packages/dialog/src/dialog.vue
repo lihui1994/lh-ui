@@ -4,9 +4,8 @@
     @after-enter="afterEnter"
     @after-leave="afterLeave"
   >
-    <div class="lh-dialog__wrapper">
+    <div v-show="visible" class="lh-dialog__wrapper">
       <div
-       v-show="visible"
        :style="style"
        aria-modal="true"
        class="lh-dialog">
@@ -37,8 +36,10 @@
 </style>
 
 <script>
+import Popup from '../../../src/utils/popup';
 export default {
   name: 'lhDialog',
+  mixins: [Popup],
   props: {
     title: {
       props: String,
@@ -62,15 +63,21 @@ export default {
     //   default: false
     // }
   },
-  mounted() {
-    console.log(this.fullscreen)
+  data() {
+    return {
+      closed: false
+    }
   },
-  methods: {
-    afterEnter() {
-      this.$emit("opened");
-    },
-    afterLeave() {
-      this.$emit("closed");
+  watch: {
+    visible(val, val2) {
+      // console.log(val2)
+      // console.log("val"+val)
+      if(val) {
+        // console.log("val"+val)
+        this.closed = false;
+        this.$emit('open');
+
+      }
     }
   },
   computed: {
@@ -82,6 +89,19 @@ export default {
       }
       return style;
     }
-  }
+  },
+  mounted() {
+    // console.log(this.visible)
+    // console.log(this.fullscreen)
+  },
+  methods: {
+    afterEnter() {
+      this.$emit("opened");
+    },
+    afterLeave() {
+      this.$emit("closed");
+    }
+  },
+  
 }
 </script>

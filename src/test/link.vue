@@ -29,7 +29,7 @@
     components: { LhLink },
     methods: {
       handleClick() {
-        alert(1)
+        // alert(1)
       }
     }
   }

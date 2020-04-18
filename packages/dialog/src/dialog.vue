@@ -4,7 +4,7 @@
     @after-enter="afterEnter"
     @after-leave="afterLeave"
   >
-    <div v-show="visible" class="lh-dialog__wrapper">
+    <div v-show="visible" class="lh-dialog__wrapper" @click.self="handleWrapperClick">
       <div
        :style="style"
        aria-modal="true"
@@ -16,6 +16,8 @@
           <button 
             type="button"
             class="lh-dialog__button"
+            v-if="showClose"
+            @click="handleClose"
           >
             <i class="el-dialog__close el-icon el-icon-close"></i>
           </button>
@@ -57,7 +59,16 @@ export default {
     modal: {
       props: Boolean,
       default: true
-    }
+    },
+    closeOnClickModal: {
+      type: Boolean,
+      default: true
+    },
+    showClose: {
+      type: Boolean,
+      default: true
+    },
+    beforeClose: Function
     // fullscreen: {
     //   props: Boolean,
     //   default: false
@@ -69,14 +80,12 @@ export default {
     }
   },
   watch: {
-    visible(val, val2) {
-      // console.log(val2)
-      // console.log("val"+val)
+    visible(val) {
       if(val) {
-        // console.log("val"+val)
         this.closed = false;
         this.$emit('open');
-
+      } else {
+        if(!this.closed) this.$emit('close');
       }
     }
   },
@@ -100,6 +109,32 @@ export default {
     },
     afterLeave() {
       this.$emit("closed");
+    },
+    handleWrapperClick() {
+      console.log(this.closeOnClickModal)
+      if(!this.closeOnClickModal) return;
+      this.handleClose();
+    },
+    handleClose() {
+      if(typeof this.beforeClose === 'function') {
+        this.beforeClose(this.hide); 
+      } else {
+        this.hide();
+      }
+    },
+    hide(cancel) {
+      if(cancel !== false) {
+        this.$emit("update:visible", false);
+        this.$emit('close');
+        this.closed = true;
+      }
+    },
+    afterEnter() {
+      this.$emit('opened');
+    },
+
+    afterLeave() {
+      this.$emit('closed');
     }
   },
   

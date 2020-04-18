@@ -1,6 +1,7 @@
 <template>
   <button
    class="lh-button"
+   @click="handleClick"
    :class="[
     type ? 'lh-button--' + type : '',
     size ? 'lh-button--' + size : '',
@@ -32,6 +33,11 @@ export default {
     size: String,
     round: Boolean,
     loading: Boolean
+  },
+  methods: {
+    handleClick(evt) {
+      this.$emit('click', evt);
+    }
   }
 }
 </script>

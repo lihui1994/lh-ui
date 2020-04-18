@@ -18,15 +18,34 @@ export default {
     modalAppendToBody: {
       type: Boolean,
       default: false
+    },
+    modalFade: {
+      type: Boolean,
+      default: true,
+    },
+    closeOnClickModal: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  data() {
+    return {
+      opened: false,
+      closed: false
     }
   },
 
   watch: {
     visible(val) {
       if(val) {
+        if(this._opening) return;
+        this.closed = false;
         Vue.nextTick(() => {
           this.open();
         })
+      } else {
+        this.close();
       }
     }
   },
@@ -37,7 +56,7 @@ export default {
   },
 
   beforeDestroy() {
-    // PopupManager.dere
+    
   },
 
   methods: {
@@ -47,12 +66,56 @@ export default {
       this.doOpen(props);
     },
 
+
     doOpen(props) {
-      // alert(1)
+      if(this.$isServer) return;
+      if(this.willOpen && !this.willOpen()) return;
+      if(this.opened) return;
+
+      this._opening = true
+
+      const dom = this.$el;
       const modal = props.modal;
+      const zIndex = props.zIndex;
+      if(zIndex) {
+        PopupManager.zIndex = zIndex;
+      }
+
       if(modal) {
+        if(this._closing) {
+          PopupManager.closeModal(this._popupId);
+          this._closing = false;
+        }
         PopupManager.openModal(this._popupId, PopupManager.nextZIndex(), this.modalAppendToBody ? undefined : DOMError, props.modalClass, props.modalFade);
       }
+
+      dom.style.zIndex = PopupManager.nextZIndex();
+      this.opened = true;
+      
+      this.onOpen && this.onOpen();
+      this.doAfterOpen();
+    },
+
+    doAfterOpen() {
+      this._opening = false
+    },
+
+    close() {
+      if(this.willClose && this.willClose()) return;
+      this.doClose();
+    },
+
+    doClose() {
+      this._closing = true;
+      this.onClose && this.onClose();
+
+      this.opened = false;
+      this.doAfterClose();
+    },
+
+    doAfterClose() {
+      PopupManager.closeModal(this._popupId);
+      this._closing = false;
     }
   }
 }

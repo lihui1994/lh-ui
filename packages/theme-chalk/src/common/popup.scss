@@ -5,7 +5,7 @@
 }
 
 .v-modal-leave{
-  animation: v-modal-out .2s forwards;
+  animation: v-modal-out .5s ease forwards;
 }
 
 @keyframes v-modal-in {
@@ -17,7 +17,6 @@
 
 @keyframes v-modal-out {
   0% {
-
   }
   100% {
     opacity: 0;

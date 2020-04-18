@@ -14,6 +14,7 @@
     <test-divider></test-divider> -->
     <test-page-header></test-page-header>
     <test-dialog></test-dialog>
+    <test-message></test-message>
   </div>
 </template>
 
@@ -28,6 +29,7 @@
   import testDivider from './test/divider.vue';
   import testPageHeader from './test/pageHeader.vue';
   import testDialog from './test/dialog.vue';
+  import testMessage from './test/message.vue';
 
   export default {
     name: 'App',
@@ -40,7 +42,8 @@
       testCard,
       testDivider,
       testPageHeader,
-      testDialog
+      testDialog,
+      testMessage
     }
   }
 </script>

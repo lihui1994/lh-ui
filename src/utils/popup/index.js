@@ -119,3 +119,7 @@ export default {
     }
   }
 }
+
+export {
+  PopupManager
+}

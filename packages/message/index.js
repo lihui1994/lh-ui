@@ -1,7 +1,2 @@
-import LhMessage from './src/message.vue';
-
-LhMessage.install = function(Vue) {
-  Vue.component(LhMessage.name, LhMessage);
-}
-
-export default LhMessage;
+import Message from './src/message.js';
+export default Message;

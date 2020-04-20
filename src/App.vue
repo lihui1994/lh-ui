@@ -15,6 +15,7 @@
     <test-page-header></test-page-header>
     <test-dialog></test-dialog>
     <test-message></test-message>
+    <test-notification></test-notification>
   </div>
 </template>
 
@@ -30,6 +31,7 @@
   import testPageHeader from './test/pageHeader.vue';
   import testDialog from './test/dialog.vue';
   import testMessage from './test/message.vue';
+  import testNotification from './test/notification.vue';
 
   export default {
     name: 'App',
@@ -43,7 +45,8 @@
       testDivider,
       testPageHeader,
       testDialog,
-      testMessage
+      testMessage,
+      testNotification
     }
   }
 </script>

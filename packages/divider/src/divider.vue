@@ -25,7 +25,6 @@ export default {
       type: String,
       default: 'center',
       validator(val) {
-        console.log(val)
         return ['left', 'center', 'right'].indexOf(val) !== -1;
       }
     }

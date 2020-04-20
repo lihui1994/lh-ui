@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Message from '../packages/message';
+import Message from '../packages/message/index.js';
+
 
 Vue.config.productionTip = false
 Vue.prototype.$message = Message;

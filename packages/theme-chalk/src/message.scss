@@ -27,6 +27,74 @@
       outline-width: 0;;
     }
   }
+
+  &__icon{
+    margin-right: 10px;
+  }
+
+  &__closeBtn{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $--message-close-icon-color;
+    font-size: $--message-close-size;
+
+    &:focus{
+      outline-width: 0;
+    }
+    &:hover{
+      color: $--message-close-hover-color;
+    }
+  }
+
+  &--success {
+    background-color: $--color-success-lighter;
+    border-color: $--color-success-light;
+  }
+
+  &--success .lh-message__content{
+    color: $--message-success-font-color;
+  }
+
+  &--info .lh-message__content{
+    color: $--message-info-font-color;
+  }
+
+  &--warning {
+    background-color: $--color-warning-lighter;
+    border-color: $--color-warning-light;
+  }
+  
+  &--warning .lh-message__content{
+    color: $--message-warning-font-color;
+  }
+
+  &--error {
+    background-color: $--color-danger-lighter;
+    border-color: $--color-danger-light;
+  }
+  
+  &--error .lh-message__content{
+    color: $--message-danger-font-color;
+  }
+}
+
+.el-icon-success{
+  color: $--message-success-font-color;
+}
+
+.el-icon-info{
+  color: $--message-info-font-color;
+}
+
+.el-icon-warning{
+  color: $--message-warning-font-color;
+}
+
+.el-icon-error{
+  color: $--message-danger-font-color;
 }
 
 .lh-message-fade-enter,

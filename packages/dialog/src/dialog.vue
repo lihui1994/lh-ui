@@ -111,7 +111,6 @@ export default {
       this.$emit("closed");
     },
     handleWrapperClick() {
-      console.log(this.closeOnClickModal)
       if(!this.closeOnClickModal) return;
       this.handleClose();
     },

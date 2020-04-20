@@ -3,15 +3,20 @@
     <div
      :class="[
       'lh-message',
+      type && !iconClass ? `lh-message--${type}` : '',
      ]"
      v-show="visible"
      @mouseenter="clearTimer"
      @mouseleave="startTimer"
+     :style="positionStyle"
     >
+      <i :class="iconClass" v-if="iconClass"></i>
+      <i v-else :class="typeClass"></i>
       <slot>
         <p v-if="!dangerouslyUseHTMLString" class="lh-message__content">{{message}}</p>
         <p v-else v-html="message" class="lh-message__content"></p>
       </slot> 
+      <i v-if="showClose" class="lh-message__closeBtn el-icon-close" @click="close"></i>
     </div>
   </transition>
 </template>
@@ -21,6 +26,14 @@
 </style>
 
 <script>
+
+const typeMap = {
+  success: 'success',
+  info: 'info',
+  warning: 'warning',
+  error: 'error'
+}
+
 export default {
   data() {
     return {
@@ -30,7 +43,22 @@ export default {
       onClose: null,
       closed: false,
       timer: null,
-      dangerouslyUseHTMLString: false
+      dangerouslyUseHTMLString: false,
+      verticalOffset: 20,
+      iconClass: '',
+      type: 'info',
+      iconClass: '',
+      showClose: false
+    }
+  },
+  computed: {
+    typeClass() {
+      return this.type && !this.iconClass ? `lh-message__icon el-icon-${typeMap[this.type]}` : '';
+    },
+    positionStyle() {
+      return {
+        'top': `${this.verticalOffset}px`
+      }
     }
   },
   watch: {
@@ -39,6 +67,9 @@ export default {
         this.visible = false;
       }
     }
+  },
+  mounted() {
+    console.log(this.type);
   },
   methods: {
     handleAfterLeave() {
@@ -68,6 +99,12 @@ export default {
         if(!this.closed) {
           this.close();
         }
+      }
+    },
+    close() {
+      this.closed = true;
+      if(typeof this.onClose === 'function') {
+        this.onClose(this);
       }
     }
   },

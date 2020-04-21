@@ -5,7 +5,8 @@
       v-show="visible"
       :style="positionStyle"
     >
-      <div class="lh-notification__group">
+      <i class="lh-notification__icon" :class="[typeClass, iconClass]" v-if="type || iconClass"></i>
+      <div class="lh-notification__group" :class="{'is-with-icon': typeClass || iconClass}">
         <h2 class="lh-notification__title" v-text="title"></h2>
         <div class="lh-notification__content" v-show="message">
           <slot>
@@ -13,6 +14,7 @@
             <p v-else v-html="message"></p>
           </slot>
         </div>
+        <div class="lh-notification__closeBtn el-icon-close" v-if="showClose" @click.stop="close"></div>
       </div>
     </div>
   </transition>
@@ -23,6 +25,14 @@
 </style>
 
 <script>
+
+const typeMap = {
+  success: 'success',
+  info: 'info',
+  warning: 'warning',
+  error: 'error'
+}
+
 export default {
   name: 'notification',
   data() {
@@ -36,7 +46,10 @@ export default {
       position: 'top-right',
       closed: false,
       onClose: null,
-      timer: null
+      timer: null,
+      showClose: true,
+      type: '',
+      iconClass: ''
     }
   },
   watch: {
@@ -48,6 +61,9 @@ export default {
     }
   },
   computed: {
+    typeClass() {
+      return this.type && typeMap[this.type] ? `el-icon-${typeMap[this.type]}` : '';
+    },
     horizontalClass() {
       return this.position.indexOf('right') > -1 ? 'right' : 'left'
     },

@@ -1,10 +1,9 @@
 <template>
   <div class="row">
     <lh-button @click="handleNotification">测试Notification</lh-button>
-    <!-- <lh-button @click="handleMessage2">测试成功message</lh-button>
-    <lh-button @click="handleMessage3">测试warning</lh-button>
-    <lh-button @click="handleMessage4">测试error</lh-button> -->
-    <!-- <lh-message></lh-message> -->
+    <lh-button @click="handleNotification2">测试Notification</lh-button>
+    <lh-button @click="handleNotification3">测试Notification</lh-button>
+    <lh-button @click="handleNotification4">测试Notification</lh-button>
   </div>
 </template>
 
@@ -21,28 +20,30 @@
          this.$notify({
           title: '提示',
           message: '这是一条Notification提示',
-          // duration: 0
+          type: 'success'
         });
       },
-      // handleMessage2() {
-      //   this.$message({
-      //     message: '恭喜你，这是一条成功消息',
-      //     type: 'success'
-      //   });
-      // },
-      // handleMessage3() {
-      //   this.$message({
-      //     message: '恭喜你，这是一条warning消息',
-      //     type: 'warning',
-      //     showClose: true,
-      //   });
-      // },
-      // handleMessage4() {
-      //   this.$message({
-      //     message: '恭喜你，这是一条error消息',
-      //     type: 'error'
-      //   });
-      // }
+      handleNotification2() {
+         this.$notify({
+          title: '提示',
+          message: '这是一条Notification提示',
+          type: 'error'
+        });
+      },
+      handleNotification3() {
+         this.$notify({
+          title: '提示',
+          message: '这是一条Notification提示',
+          type: 'warning'
+        });
+      },
+      handleNotification4() {
+         this.$notify({
+          title: '提示',
+          message: '这是一条Notification提示',
+          type: 'info'
+        });
+      },
     }
   }
 </script>

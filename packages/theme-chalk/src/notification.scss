@@ -19,6 +19,65 @@
   &.right{
     right: 16px;
   }
+
+  &__icon{
+    height: $--notification-icon-size;
+    width: $--notification-icon-size;
+    font-size: $--notification-icon-size;
+  }
+
+  &__group{
+    margin-left: $--notification-group-margin-left;
+    margin-right: $--notification-group-margin-right;
+  }
+
+  &__title{
+    font-weight: bold;
+    font-size: $--notification-title-font-size;
+    color: $--notification-title-color;
+    margin: 0;
+  }
+
+  &__content{
+    font-size: $--notification-content-font-size;
+    line-height: 21px;
+    margin: 6px 0 0 0;
+    color: $--notification-content-color;
+    text-align: justify;
+  }
+
+  &__closeBtn{
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    cursor: pointer;
+    color: $--notification-close-color;
+    font-size: $--notification-close-font-size;
+  
+    &:hover{
+      color: $--notification-close-hover-color;
+    }
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+.el-icon-success{
+  color: $--notification-success-icon-color;
+}
+
+.el-icon-error {
+  color: $--notification-danger-icon-color;
+}
+
+.el-icon-info {
+  color: $--notification-info-icon-color;
+}
+
+.el-icon-warning {
+  color: $--notification-warning-icon-color;
 }
 
 .lh-notification-fade-enter{

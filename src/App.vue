@@ -16,8 +16,24 @@
     <test-dialog></test-dialog>
     <test-message></test-message>
     <test-notification></test-notification>
+    <lh-tag>标签一</lh-tag>
+    <lh-tag closable style="margin-left: 10px;" type="success">标签二</lh-tag>
+    <lh-tag closable style="margin-left: 10px;" type="info">标签三</lh-tag>
+    <lh-tag closable style="margin-left: 10px;" type="warning">标签四</lh-tag>
+    <lh-tag closable style="margin-left: 10px;" type="danger">标签五</lh-tag>
+    <lh-tag style="margin-left: 10px;"
+      v-for="tag in tags"
+      :key="tag.name"
+      closable
+      :type="tag.type">
+      {{tag.name}}
+    </lh-tag>
   </div>
 </template>
+
+<style lang="scss">
+@import '../packages/theme-chalk/src/index.scss';
+</style>
 
 <script>
 
@@ -32,6 +48,7 @@
   import testDialog from './test/dialog.vue';
   import testMessage from './test/message.vue';
   import testNotification from './test/notification.vue';
+  import lhTag from '../packages/tag/index';
 
   export default {
     name: 'App',
@@ -46,7 +63,19 @@
       testPageHeader,
       testDialog,
       testMessage,
-      testNotification
+      testNotification,
+      lhTag
+    },
+    data() {
+      return {
+        tags: [
+          { name: '标签一', type: '' },
+          { name: '标签二', type: 'success' },
+          { name: '标签三', type: 'info' },
+          { name: '标签四', type: 'warning' },
+          { name: '标签五', type: 'danger' }
+        ]
+      }
     }
   }
 </script>

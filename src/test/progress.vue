@@ -16,10 +16,10 @@
 			<lh-progress :percentage="50" status="exception"></lh-progress>
 		</div>	
 		<lh-progress type="circle" :percentage="0"></lh-progress>
-		<!-- <lh-progress type="circle" :percentage="25"></lh-progress>
+		<lh-progress type="circle" :percentage="25"></lh-progress>
 		<lh-progress type="circle" :percentage="100" status="success"></lh-progress>
 		<lh-progress type="circle" :percentage="70" status="warning"></lh-progress>
-		<lh-progress type="circle" :percentage="50" status="exception"></lh-progress> -->
+		<lh-progress type="circle" :percentage="50" status="exception"></lh-progress>
 	</div>
 </template>
 

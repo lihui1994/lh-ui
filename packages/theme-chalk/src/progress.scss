@@ -1,0 +1,103 @@
+@import "common/var";
+@import "mixin/mixin";
+
+.lh-progress{
+  position: relative;
+  line-height: 1;
+
+  &__text {
+    font-size: 14px;
+    color: $--color-text-regular;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    line-height: 1;
+
+    i{
+      vertical-align: middle;
+      display: block;
+    }
+  }
+
+  @include m((circle,dashboard)) {
+    display: inline-block;
+    .lh-progress__text{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      transform: translate(0, -50%);
+
+      i{
+        vertical-align: middle;
+        display: inline-block;
+      }
+    }
+  }
+
+  @include m(widthout-text) {
+    .lh-progress__textP{
+      display: none;
+    }
+  }
+
+  @include when(success) {
+    .lh-progress-bar__inner{
+      background-color: $--color-success;
+    }
+    .lh-progress__text {
+      color: $--color-success;
+    }
+  }
+
+  @include when(warning) {
+    .lh-progress-bar__inner{
+      background-color: $--color-warning;
+    }
+    .lh-progress__text {
+      color: $--color-warning;
+    }
+  }
+
+  @include when(exception) {
+    .lh-progress-bar__inner{
+      background-color: $--color-danger;
+    }
+    .lh-progress__text {
+      color: $--color-danger;
+    }
+  }
+
+  &-bar{
+    padding-right: 50px;
+    display: inline-block;
+    vertical-align: center;
+    width: 100%;
+    margin-right: -55px;
+    box-sizing: border-box;
+
+    &__outer{
+      height: 6px;
+      border-radius: 100px;
+      background-color: $--border-color-lighter;
+      overflow: hidden;
+      position: relative;
+      vertical-align: middle;
+    }
+
+    &__inner{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background-color: $--color-primary;
+      text-align: right;
+      line-height: 1;
+      white-space: nowrap;
+      transition: width .6s ease;
+
+    }
+  }
+}

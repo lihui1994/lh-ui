@@ -1,6 +1,6 @@
 
-// 基础样式
-// 基础颜色
+/// 基础样式
+/// 基础颜色
 
 $--color-primary: #409EFF !default;
 /// color|1|Background Color|4
@@ -282,3 +282,10 @@ $--tag-danger-color: $--color-danger !default;
 $--tag-font-size: 12px !default;
 $--tag-border-radius: 4px !default;
 $--tag-padding: 0 10px !default;
+
+/* Loading
+--------------------------*/
+/// height||Other|4
+$--loading-spinner-size: 42px !default;
+/// height||Other|4
+$--loading-fullscreen-spinner-size: 50px !default;

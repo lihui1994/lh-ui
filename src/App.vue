@@ -29,6 +29,7 @@
 <!--      {{tag.name}}-->
 <!--    </lh-tag>-->
     <test-progress></test-progress>
+    
   </div>
 </template>
 
@@ -51,6 +52,7 @@
   import testNotification from './test/notification.vue';
   import lhTag from '../packages/tag/index';
   import testProgress from './test/progress';
+  import lhLoading from '../packages/loading/index';
 
   export default {
     name: 'App',
@@ -67,7 +69,8 @@
       testMessage,
       testNotification,
       lhTag,
-      testProgress
+      testProgress,
+      lhLoading
     },
     data() {
       return {

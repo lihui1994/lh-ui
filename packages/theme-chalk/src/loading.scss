@@ -1,0 +1,57 @@
+@import "mixin/mixin";
+@import "common/var.scss";
+
+.lh-loading-parent{
+  &--relative{
+    position: relative!important;
+  }
+
+  &--hidden{
+    overflow: hidden!important;
+  }
+}
+
+.lh-loading-mask{
+  position: absolute;
+  z-index: 2000;
+  background-color: rgba(255, 255, 255, .9);
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity .3s;
+}
+
+.lh-loading-spinner{
+  top: 50%;
+  margin-top: $--loading-spinner-size / 2;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+
+  .lh-loading-text{
+    color: $--color-primary;
+    margin: 3px 0;
+    font-size: 14px;
+  }
+
+  .circular{
+    height: $--loading-spinner-size;
+    width: $--loading-spinner-size;
+    animation: loading-rotate 2s linear infinite;
+  }
+
+  .path{
+    animation: loading-dash 1.5s ease-in-out infinite;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    stroke: $--color-primary;
+    stroke-linecap: round;
+  }
+
+  i{
+    color: $--color-primary;
+  }
+}

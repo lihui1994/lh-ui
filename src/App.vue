@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+    <lh-button @click="handleLoading" type="primary">loading</lh-button>
+    <lh-button
+      type="primary"
+      @click="handleLoading2"
+      v-loading.fullscreen.lock="fullscreenLoading">
+      指令方式
+    </lh-button>
 <!--    <test-button></test-button>-->
 <!--    <test-divider></test-divider>-->
 <!--    <test-icon></test-icon>-->
@@ -38,7 +45,7 @@
 </style>
 
 <script>
-
+  import LhButton from '../packages/button/index';
   import testButton from './test/button.vue';
   import testIcon from './test/icon.vue';
   import testAlert from './test/alert.vue';
@@ -57,6 +64,7 @@
   export default {
     name: 'App',
     components: {
+      LhButton,
       testButton,
       testIcon,
       testAlert,
@@ -80,7 +88,28 @@
           { name: '标签三', type: 'info' },
           { name: '标签四', type: 'warning' },
           { name: '标签五', type: 'danger' }
-        ]
+        ],
+        fullscreenLoading: false
+      }
+    },
+    methods: {
+      handleLoading() {
+        const loading = this.$loading({
+          lock: true,
+          text: 'Loading',
+          spinner: 'el-icon-loading',
+          background: 'rgba(0, 0, 0, 0.7)'
+        });
+        setTimeout(() => {
+          loading.close();
+        }, 2000);
+      },
+      handleLoading2() {
+        // this.fullscreenLoading = true;
+        // setTimeout(() => {
+        //   this.fullscreenLoading = false;
+        // }, 2000);
+        Loading.service({ fullscreen: true });
       }
     }
   }

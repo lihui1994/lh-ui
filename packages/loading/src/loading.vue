@@ -1,9 +1,10 @@
 <template>
-  <transition name="lh-loading-fade" @after-leave="handleAfterLeave">
+  <transition name="lh-loading-fade" @after-enter="handleAfterEnter" @after-leave="handleAfterLeave">
     <div
       v-show="visible"
       class="lh-loading-mask"
       :style="{backgroundColor:　background || ''}"
+      :class="[customClass, {'is-fullscreen': fullscreen}]"
     >
       <div class="lh-loading-snipper">
         <svg v-if="!spinner" class="circular" viewBox="25 25 50 50"></svg>
@@ -14,7 +15,7 @@
   </transition>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 @import '../../theme-chalk/src/loading.scss';
 </style>
 
@@ -25,7 +26,18 @@ export default {
       text: null,
       spinner: null,
       background: null,
-      visible: false
+      visible: false,
+      fullscreen: true,
+      visible: false,
+      customClass: ''
+    }
+  },
+  methods: {
+    handleAfterLeave() {
+      this.$emit('after-leave');
+    },
+    setText(text) {
+      this.text = text;
     }
   }
 }

@@ -1,7 +1,11 @@
-import lhLoading from './src/loading';
+import directive from './src/directive';
+import service from './src/index';
 
-lhLoading.install = function(Vue) {
-  Vue.component(lhLoading.name, lhLoading);
-}
-
-export default lhLoading;
+export default {
+  install(Vue) {
+    Vue.use(directive);
+    Vue.prototype.$loading = service;
+  },
+  directive,
+  service
+};

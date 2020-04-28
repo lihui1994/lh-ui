@@ -1,5 +1,6 @@
+@import "common/var";
 @import "mixin/mixin";
-@import "common/var.scss";
+
 
 .lh-loading-parent{
   &--relative{
@@ -23,35 +24,34 @@
   transition: opacity .3s;
 }
 
-.lh-loading-spinner{
+.lh-loading-snipper{
   top: 50%;
   margin-top: $--loading-spinner-size / 2;
   width: 100%;
   text-align: center;
   position: absolute;
+}
+.lh-loading-text{
+  color: $--color-primary;
+  margin: 3px 0;
+  font-size: 14px;
+}
 
-  .lh-loading-text{
-    color: $--color-primary;
-    margin: 3px 0;
-    font-size: 14px;
-  }
+.circular{
+  height: $--loading-spinner-size;
+  width: $--loading-spinner-size;
+  animation: loading-rotate 2s linear infinite;
+}
 
-  .circular{
-    height: $--loading-spinner-size;
-    width: $--loading-spinner-size;
-    animation: loading-rotate 2s linear infinite;
-  }
+.path{
+  animation: loading-dash 1.5s ease-in-out infinite;
+  stroke-dasharray: 90, 150;
+  stroke-dashoffset: 0;
+  stroke-width: 2;
+  stroke: $--color-primary;
+  stroke-linecap: round;
+}
 
-  .path{
-    animation: loading-dash 1.5s ease-in-out infinite;
-    stroke-dasharray: 90, 150;
-    stroke-dashoffset: 0;
-    stroke-width: 2;
-    stroke: $--color-primary;
-    stroke-linecap: round;
-  }
-
-  i{
-    color: $--color-primary;
-  }
+i{
+  color: $--color-primary;
 }

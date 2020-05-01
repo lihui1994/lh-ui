@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <lh-button @click="handleLoading" type="primary">loading</lh-button>
-    <lh-button
+    <!-- <lh-button
       type="primary"
       @click="handleLoading2"
       v-loading.fullscreen.lock="fullscreenLoading">
       指令方式
-    </lh-button>
+    </lh-button> -->
 <!--    <test-button></test-button>-->
 <!--    <test-divider></test-divider>-->
 <!--    <test-icon></test-icon>-->
@@ -36,6 +36,58 @@
 <!--      {{tag.name}}-->
 <!--    </lh-tag>-->
     <test-progress></test-progress>
+    <div style="width: 400px;margin-left: 100px">
+      <div class="top">
+      <lh-tooltip class="item" effect="dark" content="Top Left 提示文字" placement="top-start">
+        <lh-button>上左</lh-button>
+      </lh-tooltip>
+      <lh-tooltip class="item" effect="dark" content="Top Center 提示文字" placement="top">
+        <lh-button>上边</lh-button>
+      </lh-tooltip>
+      <lh-tooltip class="item" effect="dark" content="Top Right 提示文字" placement="top-end">
+        <lh-button>上右</lh-button>
+      </lh-tooltip>
+    </div>
+    <div class="left">
+      <lh-tooltip class="item" effect="dark" content="Left Top 提示文字" placement="left-start">
+        <lh-button>左上</lh-button>
+      </lh-tooltip>
+      <lh-tooltip class="item" effect="dark" content="Left Center 提示文字" placement="left">
+        <lh-button>左边</lh-button>
+      </lh-tooltip>
+      <lh-tooltip class="item" effect="dark" content="Left Bottom 提示文字" placement="left-end">
+        <lh-button>左下</lh-button>
+      </lh-tooltip>
+    </div>
+
+    <div class="right">
+      <lh-tooltip class="item" effect="dark" content="Right Top 提示文字" placement="right-start">
+        <lh-button>右上</lh-button>
+      </lh-tooltip>
+      <lh-tooltip class="item" effect="dark" content="Right Center 提示文字" placement="right">
+        <lh-button>右边</lh-button>
+      </lh-tooltip>
+      <lh-tooltip class="item" effect="dark" content="Right Bottom 提示文字" placement="right-end">
+        <lh-button>右下</lh-button>
+      </lh-tooltip>
+    </div>
+    <div class="bottom">
+      <lh-tooltip class="item" effect="dark" content="Bottom Left 提示文字" placement="bottom-start">
+        <lh-button>下左</lh-button>
+      </lh-tooltip>
+      <lh-tooltip class="item" effect="dark" content="Bottom Center 提示文字" placement="bottom">
+        <lh-button>下边</lh-button>
+      </lh-tooltip>
+      <lh-tooltip class="item" effect="dark" content="Bottom Right 提示文字" placement="bottom-end">
+        <lh-button>下右</lh-button>
+      </lh-tooltip>
+    
+    </div>
+    </div>
+    
+    
+    
+    
     
   </div>
 </template>
@@ -60,6 +112,7 @@
   import lhTag from '../packages/tag/index';
   import testProgress from './test/progress';
   import lhLoading from '../packages/loading/index';
+  import lhTooltip from '../packages/tooltip/index';
 
   export default {
     name: 'App',
@@ -78,7 +131,8 @@
       testNotification,
       lhTag,
       testProgress,
-      lhLoading
+      lhLoading,
+      lhTooltip
     },
     data() {
       return {
@@ -97,23 +151,38 @@
         const loading = this.$loading({
           lock: true,
           text: 'Loading',
-          spinner: 'el-icon-loading',
+          spinner: 'lh-icon-loading',
           background: 'rgba(0, 0, 0, 0.7)'
         });
         setTimeout(() => {
           loading.close();
         }, 2000);
       },
-      handleLoading2() {
-        // this.fullscreenLoading = true;
-        // setTimeout(() => {
-        //   this.fullscreenLoading = false;
-        // }, 2000);
-        Loading.service({ fullscreen: true });
-      }
     }
   }
 </script>
 
 <style lang="scss">
+.top {
+      text-align: center;
+    }
+
+    .left {
+      float: left;
+      width: 60px;
+    }
+
+    .right {
+      float: right;
+      width: 60px;
+    }
+
+    .bottom {
+      clear: both;
+      text-align: center;
+    }
+
+    .item {
+      margin: 4px;
+    }
 </style>

@@ -1,0 +1,9 @@
+@import "var";
+
+.lh-fade-in-linear-enter-active, .lh-fade-in-linear-leave-active{
+  transition: $--fade-linear-transition;
+}
+
+.lh-fade-in-linear-enter, .lh-fade-in-linear-leave, .lh-fade-in-linear-leave-active {
+  opacity: 0;
+}

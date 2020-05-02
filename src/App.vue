@@ -36,8 +36,8 @@
 <!--      {{tag.name}}-->
 <!--    </lh-tag>-->
     <test-progress></test-progress>
-    <test-tooltip></test-tooltip>
-    
+    <!-- <test-tooltip></test-tooltip> -->
+    <test-popover></test-popover>
     
     
     
@@ -67,6 +67,7 @@
   import testProgress from './test/progress';
   import lhLoading from '../packages/loading/index';
   import testTooltip from './test/tooltip';
+  import testPopover from './test/popover';
 
   export default {
     name: 'App',
@@ -86,7 +87,8 @@
       lhTag,
       testProgress,
       lhLoading,
-      testTooltip
+      testTooltip,
+      testPopover
     },
     data() {
       return {

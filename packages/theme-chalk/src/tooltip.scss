@@ -18,8 +18,6 @@
     min-width: 10px;
     word-wrap: break-word;
 
-   
-
     &[x-placement^="top"] {
       margin-bottom: #{$--tooltip-arrow-size + 6px};
     }

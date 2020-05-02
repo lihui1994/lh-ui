@@ -36,54 +36,8 @@
 <!--      {{tag.name}}-->
 <!--    </lh-tag>-->
     <test-progress></test-progress>
-    <div style="width: 400px;margin-left: 100px">
-      <div class="top">
-      <lh-tooltip class="item" effect="dark" content="Top Left 提示文字" placement="top-start">
-        <lh-button>上左</lh-button>
-      </lh-tooltip>
-      <lh-tooltip class="item" effect="dark" content="Top Center 提示文字" placement="top">
-        <lh-button>上边</lh-button>
-      </lh-tooltip>
-      <lh-tooltip class="item" effect="dark" content="Top Right 提示文字" placement="top-end">
-        <lh-button>上右</lh-button>
-      </lh-tooltip>
-    </div>
-    <div class="left">
-      <lh-tooltip class="item" effect="dark" content="Left Top 提示文字" placement="left-start">
-        <lh-button>左上</lh-button>
-      </lh-tooltip>
-      <lh-tooltip class="item" effect="dark" content="Left Center 提示文字" placement="left">
-        <lh-button>左边</lh-button>
-      </lh-tooltip>
-      <lh-tooltip class="item" effect="dark" content="Left Bottom 提示文字" placement="left-end">
-        <lh-button>左下</lh-button>
-      </lh-tooltip>
-    </div>
-
-    <div class="right">
-      <lh-tooltip class="item" effect="dark" content="Right Top 提示文字" placement="right-start">
-        <lh-button>右上</lh-button>
-      </lh-tooltip>
-      <lh-tooltip class="item" effect="dark" content="Right Center 提示文字" placement="right">
-        <lh-button>右边</lh-button>
-      </lh-tooltip>
-      <lh-tooltip class="item" effect="dark" content="Right Bottom 提示文字" placement="right-end">
-        <lh-button>右下</lh-button>
-      </lh-tooltip>
-    </div>
-    <div class="bottom">
-      <lh-tooltip class="item" effect="dark" content="Bottom Left 提示文字" placement="bottom-start">
-        <lh-button>下左</lh-button>
-      </lh-tooltip>
-      <lh-tooltip class="item" effect="dark" content="Bottom Center 提示文字" placement="bottom">
-        <lh-button>下边</lh-button>
-      </lh-tooltip>
-      <lh-tooltip class="item" effect="dark" content="Bottom Right 提示文字" placement="bottom-end">
-        <lh-button>下右</lh-button>
-      </lh-tooltip>
+    <test-tooltip></test-tooltip>
     
-    </div>
-    </div>
     
     
     
@@ -112,7 +66,7 @@
   import lhTag from '../packages/tag/index';
   import testProgress from './test/progress';
   import lhLoading from '../packages/loading/index';
-  import lhTooltip from '../packages/tooltip/index';
+  import testTooltip from './test/tooltip';
 
   export default {
     name: 'App',
@@ -132,7 +86,7 @@
       lhTag,
       testProgress,
       lhLoading,
-      lhTooltip
+      testTooltip
     },
     data() {
       return {
@@ -163,26 +117,5 @@
 </script>
 
 <style lang="scss">
-.top {
-      text-align: center;
-    }
 
-    .left {
-      float: left;
-      width: 60px;
-    }
-
-    .right {
-      float: right;
-      width: 60px;
-    }
-
-    .bottom {
-      clear: both;
-      text-align: center;
-    }
-
-    .item {
-      margin: 4px;
-    }
 </style>

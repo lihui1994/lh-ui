@@ -1,0 +1,19 @@
+@import "mixin/mixin";
+@import "common/var";
+
+.lh-popconfirm{
+  &__main{
+    display: flex;
+    align-items: center;
+  }
+  &__icon{
+    margin-right: 5px;
+  }
+  &__action{
+    text-align: right;
+    margin: 0;
+    .lh-button:first-child{
+      margin-right: 10px;
+    }
+  }
+}

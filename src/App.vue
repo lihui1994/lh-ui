@@ -38,7 +38,9 @@
     <test-progress></test-progress>
     <!-- <test-tooltip></test-tooltip> -->
     <test-popover></test-popover>
-    
+    <lh-popconfirm title="这是一段内容确定删除吗？">
+      <lh-button slot="reference">删除</lh-button>
+    </lh-popconfirm>
     
     
     
@@ -68,6 +70,7 @@
   import lhLoading from '../packages/loading/index';
   import testTooltip from './test/tooltip';
   import testPopover from './test/popover';
+  import lhPopconfirm from '../packages/popconfirm/index';
 
   export default {
     name: 'App',
@@ -88,7 +91,8 @@
       testProgress,
       lhLoading,
       testTooltip,
-      testPopover
+      testPopover,
+      lhPopconfirm
     },
     data() {
       return {

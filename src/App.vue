@@ -41,6 +41,11 @@
     <lh-popconfirm title="这是一段内容确定删除吗？">
       <lh-button slot="reference">删除</lh-button>
     </lh-popconfirm>
+    <lh-switch
+      v-model="value"
+      active-color="#13ce66"
+      inactive-color="#ff4949">
+    </lh-switch>
     
     
     
@@ -71,6 +76,7 @@
   import testTooltip from './test/tooltip';
   import testPopover from './test/popover';
   import lhPopconfirm from '../packages/popconfirm/index';
+  import lhSwitch from '../packages/switch/index';
 
   export default {
     name: 'App',
@@ -92,7 +98,8 @@
       lhLoading,
       testTooltip,
       testPopover,
-      lhPopconfirm
+      lhPopconfirm,
+      lhSwitch
     },
     data() {
       return {
@@ -103,7 +110,8 @@
           { name: '标签四', type: 'warning' },
           { name: '标签五', type: 'danger' }
         ],
-        fullscreenLoading: false
+        fullscreenLoading: false,
+        value: true
       }
     },
     methods: {

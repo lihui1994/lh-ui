@@ -46,7 +46,7 @@
       active-color="#13ce66"
       inactive-color="#ff4949">
     </lh-switch>
-    
+    <!-- <test-input></test-input> -->
     
     
     
@@ -77,6 +77,7 @@
   import testPopover from './test/popover';
   import lhPopconfirm from '../packages/popconfirm/index';
   import lhSwitch from '../packages/switch/index';
+  import testInput from './test/input';
 
   export default {
     name: 'App',
@@ -99,7 +100,8 @@
       testTooltip,
       testPopover,
       lhPopconfirm,
-      lhSwitch
+      lhSwitch,
+      testInput
     },
     data() {
       return {

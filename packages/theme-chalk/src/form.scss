@@ -1,0 +1,101 @@
+@import "mixin/mixin";
+@import "mixin/utils";
+@import "common/var";
+
+@include b(form) {
+  @include m(label-left) {
+    & .lh-form-item__label{
+      text-align: left;
+    }
+  }
+
+  @include m(label-top) {
+    & .lh-form-item__label{
+      float: none;
+      display: inline-block;
+      text-align: left;
+      padding: 0 0 10px 0;
+    }
+  }
+  @include m(inline) {
+    & .lh-form-item{
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: top;
+    }
+  }
+  @include m(inline) {
+    & .lh-form-item {
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    & .lh-form-item__label{
+      float: none;
+      display: inline-block;
+    }
+    & .lh-form-item__content{
+      display: inline-block;
+      vertical-align: top;
+    }
+    &.lh-form--label-top .lh-form-item__content{
+      display: block;
+    }
+  }
+}
+@include b(form-item) {
+  margin-bottom: 22px;
+  @include utils-clearfix;
+
+  & .lh-form-item {
+    margin-bottom: 0;
+  }
+
+  & .lh-input__validateIcon {
+    display: none;
+  }
+
+  @include m(medium) {
+    .lh-form-item__label {
+      line-height: 36px;
+    }
+    .lh-form-item__content{
+      line-height: 36px;
+    }
+  }
+  @include m(small) {
+    .lh-form-item__label {
+      line-height: 32px;
+    }
+    .lh-form-item__content{
+      line-height: 32px;
+    }
+    &.lh-form-item{
+      margin-bottom: 18px;
+    }
+    .lh-form-item__error{
+      padding-top: 2px;
+    }
+  }
+  @include m(mini) {
+    .lh-form-item__label {
+      line-height: 28px;
+    }
+    .lh-form-item__content{
+      line-height: 28px;
+    }
+    &.lh-form-item{
+      margin-bottom: 18px;
+    }
+    .lh-form-item__error{
+      padding-top: 1px;
+    }
+  }
+  @include e(label-wrap) {
+    float: left;
+    .lh-form-item__label{
+      display: inline-block;
+      float: none;
+    }
+  }
+}

@@ -18,13 +18,6 @@
     }
   }
   @include m(inline) {
-    & .lh-form-item{
-      display: inline-block;
-      margin-left: 10px;
-      vertical-align: top;
-    }
-  }
-  @include m(inline) {
     & .lh-form-item {
       display: inline-block;
       margin-right: 10px;
@@ -96,6 +89,79 @@
     .lh-form-item__label{
       display: inline-block;
       float: none;
+    }
+  }
+
+  @include e(label) {
+    text-align: right;
+    vertical-align: middle;
+    float: left;
+    font-size: $--form-label-font-size;
+    color: $--color-text-regular;
+    line-height: 40px;
+    padding: 0 120x 0 0;
+    box-sizing: border-box;
+  }
+  @include e(content) {
+    line-height: 40px;
+    position: relative;
+    font-size: 14px;
+    @include utils-clearfix;
+
+    .lh-input-group{
+      vertical-align: top;
+    }
+  }
+  @include e(error) {
+    color: $--color-danger;
+    font-size: 12px;
+    line-height: 1;
+    padding-top: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    @include m(inline) {
+      position: relative;
+      top: auto;
+      left: auto;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+  @include when(required) {
+    @include pseudo('not(.is-no-asterisk)') {
+      & > .lh-form-item__label::before,
+      & .lh-form-item__label-wrap > .lh-form-item__label:before{
+        content: '*';
+        color: $--color-danger;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  @include when(error) {
+    & .lh-input__inner,
+    & .lh-textarea__inner {
+      &, &:focus {
+        border-color: $--color-danger;
+      }
+    }
+    & .lh-input-group__append,
+    & .lh-form-item__prepend{
+      & .lh-input__inner {
+        border-color: transparent;
+      }
+    }
+    .lh-input__validateIcon {
+      color: $--color-danger;
+    }
+  }
+
+  @include m(feedback) {
+    .lh-input__validateIcon {
+      display: inline-block;
     }
   }
 }

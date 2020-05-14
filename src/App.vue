@@ -47,6 +47,8 @@
       inactive-color="#ff4949">
     </lh-switch>
     <!-- <test-input></test-input> -->
+    <lh-radio v-model="radio" label="1">备选项</lh-radio>
+    <lh-radio v-model="radio" label="2">备选项</lh-radio>
     
     
     
@@ -78,6 +80,7 @@
   import lhPopconfirm from '../packages/popconfirm/index';
   import lhSwitch from '../packages/switch/index';
   import testInput from './test/input';
+  import lhRadio from '../packages/radio/index';
 
   export default {
     name: 'App',
@@ -101,7 +104,8 @@
       testPopover,
       lhPopconfirm,
       lhSwitch,
-      testInput
+      testInput,
+      lhRadio
     },
     data() {
       return {
@@ -113,7 +117,8 @@
           { name: '标签五', type: 'danger' }
         ],
         fullscreenLoading: false,
-        value: true
+        value: true,
+        radio: '1'
       }
     },
     methods: {

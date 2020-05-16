@@ -12,10 +12,9 @@
     :aria-checked="model === label"
     :aria-disabled="isDisabled"
     :tabindex="tabIndex"
-    @keydown.space.stop.prevent="model = isDisabled ? model: label"
+    @keydown.space.stop.prevent="model = isDisabled ? model : label"
   >
-    <span
-      class="lh-radio__input"
+    <span class="lh-radio__input"
       :class="{
         'is-disabled': isDisabled,
         'is-checked': model === label

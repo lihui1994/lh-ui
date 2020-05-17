@@ -80,10 +80,10 @@ export default {
   },
   computed: {
     isGroup() {
-      let parent = this.$patent;
+      let parent = this.$parent;
       while(parent) {
-        if(parent.$options.componentName !== 'LhRadioGroup') {
-          parent = parent.$patent;
+        if(parent.$options.componentName !== 'lhRadioGroup') {
+          parent = parent.$parent;
         } else {
           this._radioGroup = parent;
           return true;
@@ -122,7 +122,7 @@ export default {
     handleChange() {
       this.$nextTick(() => {
         this.$emit('change', this.model);
-        this.isGroup && this.dispatch('LhRadioGroup', 'handleChange', this.model);
+        this.isGroup && this.dispatch('lhRadioGroup', 'handleChange', this.model);
       });
     }
   }

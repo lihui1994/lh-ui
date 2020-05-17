@@ -49,7 +49,12 @@
     <!-- <test-input></test-input> -->
     <lh-radio v-model="radio" label="1">备选项</lh-radio>
     <lh-radio v-model="radio" label="2">备选项</lh-radio>
-    
+    <lh-radio-group v-model="radio4" size="mini">
+      <lh-radio label="上海"></lh-radio>
+      <lh-radio label="北京"></lh-radio>
+      <lh-radio label="广州"></lh-radio>
+      <lh-radio label="深圳"></lh-radio>
+    </lh-radio-group>
     
     
   </div>
@@ -81,6 +86,7 @@
   import lhSwitch from '../packages/switch/index';
   import testInput from './test/input';
   import lhRadio from '../packages/radio/index';
+  import lhRadioGroup from '../packages/radio-group/index';
 
   export default {
     name: 'App',
@@ -105,7 +111,8 @@
       lhPopconfirm,
       lhSwitch,
       testInput,
-      lhRadio
+      lhRadio,
+      lhRadioGroup
     },
     data() {
       return {
@@ -118,7 +125,8 @@
         ],
         fullscreenLoading: false,
         value: true,
-        radio: '1'
+        radio: '1',
+        radio4: '上海'
       }
     },
     methods: {

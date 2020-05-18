@@ -1,0 +1,43 @@
+@import "common/var";
+@import "mixin/mixin";
+@import "mixin/utils";
+
+@include b(checkbox) {
+  color: $--checkbox-font-color;
+  font-weight: $--checkbox-font-weight;
+  font-size: $--font-size-base;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  user-select: none;
+  margin-right: 30px;
+
+  @include when(bordered) {
+    padding: $--checkbox-bordered-padding;
+    border-radius: $--border-radius-base;
+    border: $--border-base;
+    box-sizing: border-box;
+    line-height: normal;
+    height: $--checkbox-bordered-height;
+
+    &.is-checked {
+      border-color: $--color-primary;
+    }
+
+    &.is-disabled {
+      border-color: $--border-color-lighter;
+      cursor: not-allowed;
+    }
+
+    & + .lh-checkbox.is-bordered {
+      margin-left: 10px;
+    }
+
+    &.lh-checkbox--medium{
+      padding: $--checkbox-bordered-medium-padding;
+      border-radius: $--button-medium-border-radius;
+      height: $--checkbox-bordered-medium-height;
+    }
+  }
+}
